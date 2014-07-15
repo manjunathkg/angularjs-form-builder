@@ -9,11 +9,11 @@
             <h3>Form Properties</h3>
             <div class="row">
                 <div class="span2">Form ID: </div>
-                <div class="span4"><input type="text" name="form-id" ng-disabled="true" ng-model="form.form_id"></div>
+                <div class="span4"><input type="text" name="form-id" ng-disabled="true" ng-model="form.formId"></div>
             </div>
             <div class="row">
                 <div class="span2">Form Name:</div>
-                <div class="span4"><input type="text" name="form-name" ng-disabled="previewMode" ng-model="form.form_name"></div>
+                <div class="span4"><input type="text" name="form-name" ng-disabled="previewMode" ng-model="form.formName"></div>
             </div>
         </div>
 
@@ -27,37 +27,37 @@
         <hr>
         <p ng-show="form.form_fields.length == 0">No fields added yet.</p>
         <accordion close-others="accordion.oneAtATime">
-            <accordion-group heading="{{field.field_title}}" ng-repeat="field in form.form_fields">
+            <accordion-group heading="{{field.fieldTitle}}" ng-repeat="field in form.formFields">
 
                 <div class="accordion-edit">
-                    <button class="btn btn-danger pull-right" type="button" ng-click="deleteField(field.field_id)"><i class="icon-trash icon-white"></i> Delete</button>
+                    <button class="btn btn-danger pull-right" type="button" ng-click="deleteField(field.fieldId)"><i class="icon-trash icon-white"></i> Delete</button>
 
                     <div class="row">
                         <div class="span2">Field ID: </div>
-                        <div class="span4">{{field.field_id}}</div>
+                        <div class="span4">{{field.fieldId}}</div>
                     </div>
                     <div class="row">
                         <div class="span2">Field Type:</div>
-                        <div class="span4">{{field.field_type}}</div>
+                        <div class="span4">{{field.fieldType}}</div>
                     </div>
 
                     <div class="clear"></div> <hr>
 
                     <div class="row">
                         <div class="span2">Field Title:</div>
-                        <div class="span4"><input type="text" ng-model="field.field_title" value="{{field.field_title}}"></div>
+                        <div class="span4"><input type="text" ng-model="field.fieldTitle" value="{{field.fieldTitle}}"></div>
                     </div>
                     <div class="row">
                         <div class="span2">Field Default Value:</div>
-                        <div class="span4"><input type="text" ng-model="field.field_value" value="{{field.field_value}}"></div>
+                        <div class="span4"><input type="text" ng-model="field.fieldValue" value="{{field.fieldValue}}"></div>
                     </div>
                     <div class="row" ng-show="showAddOptions(field)">
                         <div class="span2">Field Options:</div>
                         <div class="span6">
-                            <div ng-repeat="option in field.field_options">
-                                <input type="text" ng-model="option.option_title" value="{{option.option_title}}">
+                            <div ng-repeat="option in field.fieldOptions">
+                                <input type="text" ng-model="option.optionTitle" value="{{option.optionTitle}}">
                                 <a class="btn btn-danger btn-mini right" type="button" ng-click="deleteOption(field, option)"><i class="icon-minus icon-white"></i></a>
-                                <span class="label label-inverse">Value: {{ option.option_value }}</span>
+                                <span class="label label-inverse">Value: {{ option.optionValue }}</span>
                             </div>
                             <button class="btn btn-primary btn-small" type="button" ng-click="addOption(field)"><i class="icon-plus icon-white"></i> Add Option</button>
                         </div>
@@ -66,11 +66,11 @@
                         <div class="span2">Required:</div>
                         <div class="span4">
                             <label>
-                                <input type="radio" ng-value="true" ng-selected ng-model="field.field_required"/>
+                                <input type="radio" ng-value="true" ng-selected ng-model="field.fieldRequired"/>
                                 &nbsp; Yes
                             </label>
                             <label>
-                                <input type="radio" ng-value="false" ng-model="field.field_required"/>
+                                <input type="radio" ng-value="false" ng-model="field.fieldRequired"/>
                                 &nbsp; No
                             </label>
                         </div>

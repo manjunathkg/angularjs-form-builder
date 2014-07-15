@@ -48,7 +48,7 @@ angularApp.service('FormService', function FormService($http) {
             return $http.get(formsJsonPath).then(function (response) {
                 var requestedForm = {};
                 angular.forEach(response.data, function (form) {
-                    if (form.form_id == id) requestedForm = form;
+                    if (form.formId == id) requestedForm = form;
                 });
                 return requestedForm;
             });
